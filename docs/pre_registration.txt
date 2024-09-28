@@ -1,0 +1,57 @@
+# Study Information
+
+## Hypotheses
+
+# Design Plan
+
+## Study type
+
+## Blinding
+
+## Is there any additional blinding in this study?
+
+##  Study design
+
+## Randomization
+
+# Sampling Plan
+
+## Existing data
+
+## Explanation of existing data
+
+## Data collection procedures
+
+## Sample size
+
+## Sample size rationale
+
+## Stopping rule
+
+# Variables
+
+## Manipulated variables
+
+## Measured variables
+
+## Indices
+
+# Analysis Plan
+
+## Statistical models
+
+## Transformations
+
+## Inferences criteria
+
+## Data exclusion
+
+## Missing data
+
+## Exploratory analysis
+
+# Other
+
+## Other
+
+# References
