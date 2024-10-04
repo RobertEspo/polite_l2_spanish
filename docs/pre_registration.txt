@@ -78,9 +78,30 @@ N/A
 # Analysis Plan
 
 ## Statistical models
+We will utilize Bayesian data analysis for statistical inferences.
+
+We will run two models to analyze the F0 utterances:
+
+Model 1:
+We will fit a hierarchical linear regression model in which the boundary tone height will be fit as a function of *power*, *social distance*, *level of request*, and *proficiency* (LexTALE score).
+The model will also include grouping effects for participants.
+i.e.,
+```
+boundary_tone_height_z ~ power * social_distance * level_of_request + proficiency +
+	(1 | participant_id)
+```
+Model 2:
+We will fit the same model with the dependent variable mean_utterance_f0.
+i.e.,
+```
+mean_utterance_f0_z ~ power * social_distance * level_of_request + proficiency +
+	(1 | participant_id)
+```
+
+These models will use regularizing, weakly informative priors.
 
 ## Transformations
-The raw F0 data will be extracted in Hz, and then converted to semitones. Then, z-scores will be computed (mean = 0, sd = 1).
+All F0 data will be extracted in Hz and standardized to z-scores (mean = 0, sd = 1).
 
 ## Inferences criteria
 
