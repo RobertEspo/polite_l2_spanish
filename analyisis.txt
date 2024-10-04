@@ -1,0 +1,11 @@
+Notes from Joseph on analaysis 10/4/2024
+
+Look at empathy/intonation study to see what they did to find overall utterance pitch height.
+
+Get Pitch for boundary tone.
+
+Bayesian to look for null finding. We think a meaningful difference would lie between these ranges. brm().
+
+Pitch --> semitones/log normalization --> z score
+
+Cristian decaño
