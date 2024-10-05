@@ -1,0 +1,71 @@
+form Arguments
+	sentence wav_directory C:\Users\rober\Desktop\tests
+	sentence textgrid_directory C:\Users\rober\Desktop\tests
+	positive tier_syllables 3
+endform
+
+appendInfoLine: "Debug 0: INITIATE"
+
+Create Strings as file list... file_list 'textgrid_directory$'/*.TextGrid
+object_list = selected("Strings")
+appendInfoLine: "Debug 1: object_list of textgrid_directory created."
+
+numberOfFiles = Get number of strings
+appendInfoLine: "Debug 2: NumberOfFiles = ", numberOfFiles
+
+for ifile to numberOfFiles
+	select Strings file_list
+	
+	textgrid_file$ = Get string... ifile
+	appendInfoLine: "Debug 3: current Textgrid file = ", textgrid_file$
+	
+	textgrid_path$ = textgrid_directory$ + "\" + textgrid_file$
+	appendInfoLine: "Debug 4: current textgrid path = ", textgrid_path$
+
+	wav_file$ = replace$ (textgrid_file$, ".TextGrid", ".wav", 1)	
+	wav_path$ = wav_directory$ + "\" + wav_file$
+	appendInfoLine: "Debug 5: Corresponding .wav path = ", wav_path$
+
+	appendInfoLine: "Debug 6: TextGrid exists: ", fileReadable(textgrid_path$)
+    
+	appendInfoLine: "Debug 7: WAV exists: ", fileReadable(wav_path$)
+
+	call mean_boundary_tone 'textgrid_path$' 'wav_path$'
+	
+endfor
+
+###
+
+procedure mean_boundary_tone textgrid_path$ wav_path$
+	appendInfoLine: "Debug 8: ", textgrid_path$
+	appendInfoLine: "Debug 9: ", wav_path$
+	if fileReadable (textgrid_path$) and fileReadable (wav_path$)
+		appendInfoLine: "Debug 10: Both files are readable"
+		Read from file... 'textgrid_path$'
+		textgrid = selected("TextGrid")
+		appendInfoLine: "Debug 11: Textgrid ", textgrid ," selected."
+		
+		finalInterval = Get number of intervals... tier_syllables
+		appendInfoLine: "Debug 12: Number of intervals = ", finalInterval
+
+		if finalInterval > 0
+			startTime = Get start time of interval: tier_syllables, finalInterval - 1
+			endTime = Get end time of interval: tier_syllables, finalInterval - 1
+			appendInfoLine: "Debug 13: got start and end times: " + string$(startTime) + " " + string$(endTime)
+
+			Read from file... 'wav_path$'
+			sound = selected("Sound")
+			To Pitch... 0.0 75 600
+
+			meanPitch = Get mean... startTime endTime Hertz
+
+			appendInfoLine: "Mean pitch = " + string$(meanPitch) + " Hz"
+			
+			appendFileLine: "C:\Users\rober\Desktop\tests\output.txt", string$(meanPitch)
+		else
+			appendInfoLine: "Debug 14: No intervals found in tier"
+		endif
+	else
+		appendInfoLine: "Debug 15: One or both files not readable"
+	endif
+endproc

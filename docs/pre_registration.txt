@@ -66,12 +66,13 @@ Our experiment will manipulate a "conditional" variable that refers to three ind
 ## Measured variables
 For the DCT, there are two measured variables: utterance-level mean pitch height and boundary tone height.
 
-	***GOING TO WRITE SCRIPTS FOR THESE TWO PROCESSES***
+	***GOING TO WRITE SCRIPT FOR THIS PROCESS***
 
 To get "utterance-level mean pitch height", Praat's "Get Pitch" function will be used. The selection will be the entire length of the utterance.
-
-To get "mean pitch height", in Praat, the final syllable of the utterance will be selected and the "Move cursor to maximum pitch" function will be used. Then, the "Get pitch" function will be used.
 				**********
+
+To get utterance-level mean pitch height, pitch values across utterance will be extracted using VoiceSauce's (Shue, 2011) Subharmonic-to-Harmonic Ratio method. This data will be loaded into R and the mean will be found.
+				
 ## Indices
 N/A
 
