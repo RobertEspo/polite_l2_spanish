@@ -14,9 +14,8 @@ intercept => (power) =NORMAL mean 0, sd 1
 Random effects SD = cauchy(0,1)
 		COR =	lkj(1)
 
-Pitch --> semitones/log normalization --> z score
-
 Cristian decanio --> data available, how to do transformations, how to get f0.
+	raw pitch --> z-scores
 
 DATA ANALYSIS OPTION 2
 F0 ~ 0 + politeness_condition + (1 + condition | participant)
