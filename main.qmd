@@ -1,0 +1,97 @@
+---
+title             : |
+  (Im)polite Requests in L2 Spanish
+shorttitle        : "L2 Spanish Requests"
+author            : 
+  - name: Robert Esposito
+    corresponding: true
+    affiliations: Rutgers University
+    email: rme70@rutgers.edu
+
+bibliography      : "./lit/polite_bib.bib"
+csl               : "./lit/apa-6th-edition.csl"
+indent: true
+
+format:
+  docx:
+    reference-doc: "./ref_doc/apa_style.docx"
+    number-sections: false
+    highlight-style: github
+    code-line-numbers: true
+    fig-align: center
+    tbl-colwidths: true
+    mermaid:
+      theme: neutral
+    mermaid-format: png
+
+editor_options: 
+  markdown: 
+    wrap: sentence
+metadata: 
+  subject: linguistics
+  description: "L2 Intonational Phonology"
+  category: article
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Set document defaults
+knitr::opts_chunk$set(
+  cache.extra = knitr::rand_seed, 
+  fig.retina = 2, 
+  echo = F, 
+  message = F, 
+  warning = F,
+  fig.asp = 0.5625,
+  out.width = "100%",
+  dpi = 300, 
+  fig.path = 'figs/', 
+  dev = c("png", "pdf")
+  )
+
+library("here")
+library("fs")
+library("dplyr")
+library("tidyr")
+library("stringr")
+```
+
+{{< pagebreak >}}
+
+# Author note {.unnumbered}
+
+Correspondence concerning this article should be addressed to Robert Esposito, Rutgers University - Department of Spanish and Portuguese, 15 Seminary Place, New Brunswick, NJ 08904, USA . E-mail: rme70@rutgers.edu.
+
+{{< pagebreak >}}
+
+# Abstract {.unnumbered}
+
+This is where the abstract will go.
+
+*Keywords:* Pitch, Prosody, Intonation, Intonational Phonology, Pragmatics, Linguistics
+
+*Word count:* WORD_COUNT
+
+{{< pagebreak >}}
+
+
+# `r rmarkdown::metadata$title`
+
+# Introduction
+
+F0, and its phonological correlate pitch, is used cross-linguistically for a variety of functions. Typologically, some languages, like Yoruba or Mandarin Chinese, map pitch to tones, which function like segmental phonemes, used to deliver semantic or morphosyntactic meaning. In other languages, like the vast majority of Indo-European languages, pitch is used for a variety of pragmatic purposes, in which case it is labeled as "intonation", such as differentiating sentence modality or expressing doubt [@ladd2008intonational]. One such use is to express politeness. @brown1987politeness, in their research on cross-linguistic expressions of politeness, explain that in Tzeltal, a high pitch or falsetto can be used to mark politeness, and they have claimed elsewhere that there is a universal association between high pitch and tentativeness [@brown1974theory].
+
+Researchers like @ohala1983cross have proposed that pitch is one of the very few areas of language that expresses less than arbitrary sound-meaning correspondences. In what he labels the "frequency code", the use of pitch in human language evolved from a cross-species use of F0, where higher pitch is "nonthreatening, submissive, subordinate, in need of the receiver's cooperation and good will", whereas lower pitch is "aggressive, assertive..." (p. 8). He claims that these correspondences are cross-linguistic, citing the universality of F0's use to distinguish sentence modality. That is, cross-linguistically, low pitch is associated with statements ("assertiveness"), whereas high pitch is associated with questions ("in need of the receiver's cooperation and good will").
+
+Given these proposals, it would be expected that prosodic features may be some of the first politeness strategies positively transferred from the L1 to the L2, due to the crosslinguistic similarities and ready availability. A variety of politeness strategies require more complex morpho-syntactic transformations (cite brown here), but something as simple as using higher pitch to express increasing politeness is something available to even the most neophyte language learner. This study aims to investigate the intonational resources that L2 Spanish speakers have available to them.
+
+
+{{< pagebreak >}}
+
+
+# References {.unnumbered}
+
+::: {#refs}
+:::
