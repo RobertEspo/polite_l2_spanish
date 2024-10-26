@@ -1,0 +1,48 @@
+Notes from Joseph on analaysis 10/4/2024
+
+Look at empathy/intonation study to see what they did to find overall utterance pitch height.
+
+Get Pitch for boundary tone.
+
+Bayesian to look for null finding. We think a meaningful difference would lie between these ranges. brm(). 
+
+log --> z scores. 0,1.
+f0 ~ politeness_condition + (1 + condition | participant) 
+intercept => (power) =NORMAL mean 0, sd 1
+		B (social distance) =NORMAL mean 0, sd .5
+
+Random effects SD = cauchy(0,1)
+		COR =	lkj(1)
+
+Cristian decanio --> data available, how to do transformations, how to get f0.
+	raw pitch --> z-scores
+
+DATA ANALYSIS OPTION 2
+F0 ~ 0 + politeness_condition + (1 + condition | participant)
+
+###
+
+Outline
+
+General intro
+	Politeness Brown & Levinson
+	Frequency Code Ohala
+Politeness
+	Brown & Levinson
+	Ways to express politeness
+	Justification for looking at intonation
+Frequency Code
+	Ohala
+	Justification for looking at pitch specifically
+Autosegmental Metrical framework
+	Ladd, Pierrehumbert
+	General assumptions of intonation
+LILT
+	L1-L2 transfer of intonatioanl features
+English politeness
+	How to express politeness with English intonation
+Spanish politeness
+	How to express politeness with Spanish intonation
+Previous research
+	Astruc 2016
+	Any others?
