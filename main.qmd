@@ -87,6 +87,20 @@ Intonation in modern linguistics is only recently receiving more attention. Wher
 
 The vast majority of research on intonation investigate monolingual speakers, but there do exist recent works that investigate L2 intonation strategies [@astruc2016intonational], as well as attempt to model L2 intonation [@mennen2015beyond]. The current research undertaken here attempts to investigate the L2 intonation system by looking at L1 English L2 Spanish intonational strategies to express varying levels of politeness.
 
+## Politeness
+
+@brown1974theory provide a landmark investigation in linguistic expressions of politeness. In their conception, politeness strategies are used to mitigate face threatening acts, which can attack an individual's negative face, one's basic claim to freedom of action and from imposition, or positive face, the self-image one has of oneself and the desire for it to be appreciated and approved of. Politeness strategies are similarly divided into negative politeness strategies, used to minimize the effects of an inevitable face threatening act, and positive politeness strategies, where an individual attempts to align themselves closer with the interlocutor and demonstrate that they share their desires. For example, negative politeness strategies may include being pessimistic about the interlocutor's response to a request, using questions, and using more complex syntax to hedge (e.g., in Spanish, the imperfect subjunctive); positive politeness strategies, on the other hand, may include using in-group identity markers, seeking agreement on safe topics, or presupposing common ground.
+
+The decision to opt for a specific politeness strategy depends on a cost-benefit analysis of three binary factors: power, social distance, and level of imposition of request. These three independent variables, @brown1974theory claim, are assigned different values cross-culturally, which account for the rich diversity in cultures globally.
+
+Power can come from both material and metaphysical sources. Naturally, certain conceptions of power can have more sway in some contexts than others. Monetary power in a bargaining situation would hold much more sway than in a situation where a student is asking for help on an essay from a writing center.
+
+Social distance is characterized by how socially close two individuals are. For example, the social distance between two siblings are typically much lower than the social distance between two students who don't know each other. Of note, a student and a professor who have a close relationship may have a very low social distance, but an imbalance of power. Significantly, social distance here does not refer directly to the distance assigned to them based on their station, but to their personal relationship.
+
+Finally, the level of imposition of request transparently refers to how imposing the request is. For example, asking someone to borrow a pencil is a low imposition in nearly all situations; however, asking anyone at all to borrow their expensive laptop proves to be a much higher imposition.
+
+In the current study, the three identified factors will be closely controlled for in the context of the United States university environment, appealing to the target population of college students. The specific situations will be defined below.
+
 ## Autosegmental Metrical Theory
 
 Within the AM framework [@ladd2008intonational], the continuous phonetic cue F0 is mapped to ordered strings of Low (L) and High (H) tones that attach to stressed syllables, called pitch accents, and edges of phrases, called boundary tones. Significantly, the phonological representations are not meant to include all elements of pitch modulation, just as all phonetic elements are not recorded for segments. That is, phonetically distinct contours may be realization of the very same underlying phonological element. Thus, the goal of AM is not to record every phonetic detail of F0, but to understand how F0 maps to discrete, categorical tones that express meaning [@ladd2022trouble].
@@ -111,13 +125,11 @@ Although AM takes for granted the arbitrary nature of sound to meaning correspon
 
 This belief is supported by @brown1987politeness. They give Tzeltal as an example, where politeness is marked by high pitch or falsetto. They claim elsewhere that there is a universal association between high pitch and tentativeness [@brown1974theory].
 
-Given the cited research, it would be expected that some of the earliest politeness strategies adopted by L2 learners would involve pitch, as opposed to (morpho-)syntax or semantics, as they already have the correspondence between higher pitch and politeness available to them in their L1. This prediction will be further developed below in the discussion of politeness strategies and L1 to L2 intonation transfer.
-
-## Politeness
-
-@brown1974theory provides a thorough, cross-linguistic investigation of politeness.
+Given the cited research, it would be expected that some of the earliest politeness strategies adopted by L2 learners would involve pitch, as opposed to (morpho-)syntax or semantics, as they already have the correspondence between higher pitch and politeness available to them in their L1. This is in opposition to more syntactically complex expressions of politeness strategies, such as using the imperfect subjunctive.
 
 ## LiLT model
+
+## Development of Intonation in the L2
 
 ## Previous Research
 
