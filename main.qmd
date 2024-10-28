@@ -121,7 +121,17 @@ knitr::include_graphics(
 
 On the tone tier, pitch accents are represented with **\*** (e.g. H\* represents a High tone associated with a stressed syllable), while **%** is associated with boundary tones (e.g. H% is a High boundary tone at the end of a phrase). A **-** is used to represent a phrase boundary that is not utterance final (e.g. H- is a High phrase boundary). As mentioned above, tones can be combined to represent rises and falls, and when used as pitch accents, the **\*** indicates the tone that is most associated with the stressed syllable. For example, H\*L is a fall, where the peak is within the stressed syllable; HL\* represents a fall where the peak occurs either before or at the very start of the stressed syllable. Crucially, each ToBI system will define how an underlying representation can be realized, such that "H\*L" may not be phonetically realized as the same in two different languages or two different varieties of the same language.
 
-Despite the previous claim that intonation is mapped to categorical tones, there is evidence that this is not entirely true. @ladd1997perception, for example, suggests that there is a distinction to be made between production and perception: whereas production is, in fact, categorically determined, perception is gradient. @orrico2020individual supports the view that perception of intonation is gradient by investigating epistemic bias (i.e., expecting a positive or negative response) in the perception of yes-no questions in Solerno Italiano. In their experiment, L1 Solerno Italian speakers listened to yes-no questions. The questions' nuclear pitch accent peak and boundary tone peak were synthetically manipulated in various height steps. Participants were asked to choose a point on a scale from 0 "the speaker expects NO" to 100 "the speaker expects YES". They found that participants with higher empathy *and* experience with other Italian varieties had a more granular perception of the steps, whereas other participants had a more binary perception.
+It is commonly found that there is a distinction between "prenuclear" and "nuclear" pitch accents, where the nuclear pitch accent is the rightmost pitch accent, and all those that come before it are prenuclear. Typically, studies documenting intonation in the AM framework find that there are restrictions as to which tones can occur in prenuclear vs nuclear position, but overall there is overlap. The documentary work involves determining which pitch accents can occur in which positions for which utterance types (e.g., @fig-pitch-accent-example).
+
+```{r}
+#| label: fig-pitch-accent-example
+#| fig-cap: An example of the pitch accent L+H* in Castilian Spanish with its phonetic realization and (stressed syllable in grey) and distribution of use [@Aguilar2009].
+knitr::include_graphics(
+  here("figs", "pitch_accent_example.png")
+  )
+```
+
+Despite the previous claim that intonation is mapped to categorical tones, there is evidence that this is not entirely true. @ladd1997perception, for example, suggests that there is a distinction to be made between production and perception: whereas production is, in fact, categorically determined, perception is gradient. @orrico2020individual supports the view that perception of intonation is gradient by investigating epistemic bias (i.e., expecting a positive or negative response) in the perception of yes-no questions in Solerno Italian. In their experiment, L1 Solerno Italian speakers listened to yes-no questions. The questions' nuclear pitch accent peak and boundary tone peak were synthetically manipulated in various height steps. Participants were asked to choose a point on a scale from 0 "the speaker expects NO" to 100 "the speaker expects YES". They found that participants with higher empathy *and* experience with other Italian varieties had a more granular perception of the steps, whereas other participants had a more binary perception.
 
 Although there is clearly evidence for a gradient approach to perception of intonation, there is less evidence for production. This study will help contribute to this body of literature by investigating the height of boundary tones in the production of L1 English L2 Spanish learners to indicate politeness. Under @ohala1983cross, it's predicted that higher levels of politeness would be associated with a higher boundary tone pitch. That is, in this study, where power, social distance, and level of imposition of the request are set to [+], we would expect the highest boundary tones, and for the boundary tone to become gradiently lower as the independent variables are step-wise set to [-].
 
@@ -151,6 +161,10 @@ Given the cited research, it would be expected that some of the earliest politen
 
 Importantly, as demonstrated by @estebas2014evaluation, a broader pitch range in a given *pitch accent* is not always positively associated with politeness. As such, this, along with @ohala1983cross's frequency code, gives motivation to examine pitch more broadly along two dimensions: the overall mean pitch of an utterance and the height of the final boundary tone of the utterance.
 
+# The Present Study
+
+Few studies have worked to document the intonation of L2 Spanish [e.g., @nibert2005acquisition, @henriksen2010development], and even fewer still have investigated the intersection of intonation and politeness [@herrero2020unintentional, @astuc2016intonational]. The present study aims to document the most common nuclear configurations
+
 ## Previous Research
 
 Research on the interactions of politeness and intonation in the L2 is scarce, and this study hopes to fill in that gap by building on what little literature there is.
@@ -161,17 +175,15 @@ The only other study that investigate L1 English L2 Spanish politeness intonatio
 
 In their analysis of L2 corpus's intonation, @astruc2016intonational found that requests were most associated with the low rise, high rise, simple fall, and fall rise, the last of which was exclusively associated with requests. They found influence from English in the choice of intonation patterns, such as the overuse of falling intonation patterns. Most importantly, they found that the overall distribution and frequency of each tonal accent differed from the L1 corpus: high rises were much more frequent in the L2 corpus, as well as the number of falling patterns. They also produced utterances with a broader pitch range, which would possibly be interpreted as over-excited by L1 Spanish speakers [@estebas2014evaluation].
 
-# The Present Study
-
-Due to the limited data available to them, @astruc2016intonational called for studies investigating a range of proficiency levels. This study hopes to fill that gap by documenting higher proficiency L1 English L2 Spanish learners. Notably, this study will investigate American English college-aged students, as opposed to the British English speakers, so the contours found in their study from the L2 speakers are not directly comparable to the ones found here.
-
-This study will investigate polite requests in L1 English L2 Spanish learners through a discourse completion task (DCT). 
-
 ## Research Questions
 
 
 
 # Scraps
+
+Due to the limited data available to them, @astruc2016intonational called for studies investigating a range of proficiency levels. This study hopes to fill that gap by documenting higher proficiency L1 English L2 Spanish learners. Notably, this study will investigate American English college-aged students, as opposed to the British English speakers, so the contours found in their study from the L2 speakers are not directly comparable to the ones found here.
+
+This study will investigate polite requests in L1 English L2 Spanish learners through a discourse completion task (DCT). 
 
 Fundamental frequency (F0), and its phonological correlate pitch, is used cross-linguistically for a variety of functions. While some languages modulate F0 at both lexical and post-lexical levels, some languages, such as English and Spanish, primarily modulate F0 at the post-lexical level. At this level, we refer to the modulation as "intonation", in which case it encodes pragmatic meaning and phrase boundaries.
 
