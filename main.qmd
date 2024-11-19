@@ -19,7 +19,7 @@ indent: true
 format:
   docx:
     reference-doc: "./ref_doc/apa_style.docx"
-    number-sections: false
+    number-sections: true
     highlight-style: github
     code-line-numbers: true
     fig-align: center
@@ -60,6 +60,8 @@ library("fs")
 library("dplyr")
 library("tidyr")
 library("stringr")
+library("knitr")
+library("kableExtra")
 ```
 
 {{< pagebreak >}}
@@ -91,11 +93,11 @@ Outside of the L2 classroom, intonation in modern linguistics is only recently r
 
 The current research undertaken here investigates the L2 intonation system by looking at L1 English L2 Spanish intonational strategies to express varying levels of politeness. L2 Spanish utterances will be annotated using ToBI within AM framework, and pitch contours will be compared with expected L1 Spanish nuclear configurations. Furthermore, the mean pitch of the utterance and the height of the final boundary tone will be investigated as a function of politeness to see if there is support for a universal association between high pitch and politeness.
 
-# Politeness
+## Politeness
 
-@brown1974theory provide a landmark investigation in linguistic expressions of politeness. In their conception, politeness strategies are used to mitigate face threatening acts, which can attack an individual's negative face, one's basic claim to freedom of action and from imposition, or positive face, the self-image one has of oneself and the desire for it to be appreciated and approved of. Politeness strategies are similarly divided into negative politeness strategies, used to minimize the effects of an inevitable face threatening act, and positive politeness strategies, where an individual attempts to align themselves closer with the interlocutor and demonstrate that they share their desires. For example, negative politeness strategies may include being pessimistic about the interlocutor's response to a request, using questions, and using more complex syntax to hedge (e.g., in Spanish, the imperfect subjunctive); positive politeness strategies, on the other hand, may include using in-group identity markers, seeking agreement on safe topics, or presupposing common ground.
+@brown1987politeness provide a landmark investigation in linguistic expressions of politeness. In their conception, politeness strategies are used to mitigate face threatening acts, which can attack an individual's negative face, one's basic claim to freedom of action and from imposition, or positive face, the self-image one has of oneself and the desire for it to be appreciated and approved of. Politeness strategies are similarly divided into negative politeness strategies, used to minimize the effects of an inevitable face threatening act, and positive politeness strategies, where an individual attempts to align themselves closer with the interlocutor and demonstrate that they share their desires. For example, negative politeness strategies may include being pessimistic about the interlocutor's response to a request, using questions, and using more complex syntax to hedge (e.g., in Spanish, the imperfect subjunctive); positive politeness strategies, on the other hand, may include using in-group identity markers, seeking agreement on safe topics, or presupposing common ground.
 
-The decision to opt for a specific politeness strategy depends on a cost-benefit analysis of three binary factors: power, social distance, and level of imposition of request. These three independent variables, @brown1974theory claim, are assigned different values cross-culturally, which account for the rich diversity in cultures globally.
+The decision to opt for a specific politeness strategy depends on a cost-benefit analysis of three binary factors: power, social distance, and level of imposition of request. These three independent variables, @brown1987politeness claim, are assigned different values cross-culturally, which account for the rich diversity in cultures globally.
 
 Power can come from both material and metaphysical sources. Naturally, certain conceptions of power can have more sway in some contexts than others. Monetary power in a bargaining situation would hold much more sway than in a situation where a student is asking for help on an essay from a writing center.
 
@@ -105,7 +107,7 @@ Finally, the level of imposition of request transparently refers to how imposing
 
 In the current study, the three identified factors will be closely controlled for in the context of the United States university environment, appealing to the target population of college students. The specific situations will be defined below.
 
-# Autosegmental Metrical (AM) Theory
+## Autosegmental Metrical (AM) Theory
 
 Within the AM framework [@ladd2008intonational], the continuous phonetic cue F0 is mapped categorically to ordered strings of Low (L) and High (H) tones that attach to stressed syllables, called pitch accents, and edges of phrases, called boundary tones. Significantly, the phonological representations are not meant to include all elements of pitch modulation, just as all phonetic elements are not recorded for segments. That is, phonetically distinct contours may be realization of the very same underlying phonological element. Thus, the goal of AM is not to record every phonetic detail of F0, but to understand how F0 maps to discrete, categorical tones that express meaning [@ladd2022trouble].
 
@@ -137,7 +139,7 @@ Despite the previous claim that intonation is mapped to categorical tones, there
 
 Although there is clearly evidence for a gradient approach to perception of intonation, there is less research that investigates production. This study will help contribute to this body of literature by investigating the height of boundary tones in the production of L1 English L2 Spanish learners to indicate politeness. Under the frequency code [@ohala1983cross], which will be explained below,it's predicted that higher levels of politeness would be associated with a higher boundary tone pitch. That is, in this study, where power, social distance, and level of imposition of the request are set to [+], we would expect the highest boundary tones, and for the boundary tone to become gradiently lower as the independent variables are step-wise set to [-].
 
-# L2 Intonation
+## L2 Intonation
 
 AM has been primarily developed to investigate L1 intonation, but there have been recent attempts to expand intonation investigation into the L2 domain. For example, @mennen2015beyond has proposed the theoretical model L2 Intonation Learning Theory (LILt). Four dimensions of intonation are recognized under this model with the goal of characterizing the similarities and differences between the intonation inventories between two languages:
 
@@ -153,7 +155,7 @@ The differences here have a significant impact on the acquisition of Spanish by 
 
 The intonation of Spanish in L1 English L2 Spanish learners will be investigated under the basic tenets of AM, using ToBI to document their underlying contours, as well as work to test the LILt model's predictions on L1-L2 intonation transfer. Broadly, it is expected that where General American English and Spanish match along the aforementioned dimensions, L1 English L2 Spanish learners will experience positive transfer; where there are mismatches along any of the dimensions, they will experience negative transfer. That is, we expect to see typical L1 English contours in their L2 Spanish.
 
-# Pitch and Politeness
+## Pitch and Politeness
 
 Although AM takes for granted the arbitrary nature of sound to meaning correspondences that dominate human language, some researchers propose that some aspects of pitch-meaning correspondences are non-arbitrary. For example, @ohala1983cross, in his "frequency code", the use of pitch in human language evolved from a cross-species use of F0, where higher pitch is "nonthreatening, submissive, subordinate, in need of the receiver's cooperation and good will", whereas lower pitch is "aggressive, assertive..." (p. 8). He claims that these correspondences are cross-linguistic, citing the universality of F0's use to distinguish sentence modality. That is, cross-linguistically, low pitch is associated with statements ("assertiveness"), whereas high pitch is associated with questions ("in need of the receiver's cooperation and good will"). Under this belief, using higher pitch is a cross-linguistic method of expressing politeness.
 
@@ -193,6 +195,43 @@ Due to insufficient previous data in this domain, we must rely on L1 research to
 3. Does higher pitch correlate with higher politeness [@ohala1983cross]?
 
 This question will be examined quantitatively in two ways. First, the overall mean pitch of the utterance will be examined, and then the height of the final boundary tone. These two measures have been chosen due to their salience in the speech stream.
+
+# Methods
+
+## Stimuli
+
+The experimental stimuli were designed as a discourse completion task (DCT) that controlled for power, social distance, and level of imposition [@brown1987politeness], all of which had two steps for a total of 8 conditions [@tbl-conditions]. The general contexts for each condition were created with the target population, college students, in mind, so that the person to which they were speaking in the DCT was a sibling, a professor, or another student. Each condition had 3 items, for a total of 24 items. Experimental stimuli were written by the first author and reviewed by a native speaker of Chilean Spanish who has experience teaching Spanish to the target population. For a full list of stimuli SEE APPENDIX [ADD APPENDIX].
+
+```{r}
+#| label: tbl-conditions
+#| tbl-cap: "Conditions for experimental stimuli."
+
+data <- data.frame(
+  Condition = 1:8,
+  Power = c("-", "-", "+", "+", "+", "+", "-", "-"),
+  Distance = c("-", "-", "+", "+", "-", "-", "+", "+"),
+  Level_of_imposition = c("-", "+", "-", "+", "-", "+", "-", "+"),
+  Context = c(
+    "sibling",
+    "sibling",
+    "unfamiliar professor",
+    "unfamiliar professor",
+    "familiar professor",
+    "familiar professor",
+    "unfamiliar student",
+    "unfamiliar student"
+    )
+)
+
+kable(
+  data,
+  format = "markdown", # Use markdown for Word compatibility
+  col.names = c("Condition", "Power", "Distance", "Level of Imposition", "Context")
+)
+
+```
+
+## Procedure
 
 # Scraps
 
