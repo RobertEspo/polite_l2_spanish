@@ -1,0 +1,78 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 5.504 
+tiers? <exists> 
+size = 3 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "utterance" 
+        xmin = 0 
+        xmax = 5.504 
+        intervals: size = 3 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.451110648148148 
+            text = "" 
+        intervals [2]:
+            xmin = 1.451110648148148 
+            xmax = 4.748414351851852 
+            text = "" 
+        intervals [3]:
+            xmin = 4.748414351851852 
+            xmax = 5.504 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "words" 
+        xmin = 0 
+        xmax = 5.504 
+        intervals: size = 7 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.451110648148148 
+            text = "" 
+        intervals [2]:
+            xmin = 1.451110648148148 
+            xmax = 2.0056153306755826 
+            text = "perdona" 
+        intervals [3]:
+            xmin = 2.0056153306755826 
+            xmax = 2.7154992487139915 
+            text = "escuchaste" 
+        intervals [4]:
+            xmin = 2.7154992487139915 
+            xmax = 3.4994580103737993 
+            text = "lo que" 
+        intervals [5]:
+            xmin = 3.4994580103737993 
+            xmax = 4.04267353026406 
+            text = "nos dijo" 
+        intervals [6]:
+            xmin = 4.04267353026406 
+            xmax = 4.748414351851852 
+            text = "la profesora?" 
+        intervals [7]:
+            xmin = 4.748414351851852 
+            xmax = 5.504 
+            text = "" 
+    item [3]:
+        class = "IntervalTier" 
+        name = "boundary" 
+        xmin = 0 
+        xmax = 5.504 
+        intervals: size = 3 
+        intervals [1]:
+            xmin = 0 
+            xmax = 4.609251594113543 
+            text = "" 
+        intervals [2]:
+            xmin = 4.609251594113543 
+            xmax = 4.748414351851852 
+            text = "" 
+        intervals [3]:
+            xmin = 4.748414351851852 
+            xmax = 5.504 
+            text = "" 

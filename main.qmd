@@ -55,6 +55,7 @@ knitr::opts_chunk$set(
   dev = c("png", "pdf")
   )
 
+# Libraries
 library("here")
 library("fs")
 library("dplyr")
@@ -62,6 +63,10 @@ library("tidyr")
 library("stringr")
 library("knitr")
 library("kableExtra")
+library("tidyverse")
+
+# Load data
+participant_data <- read_csv(here("data","pilot","participants.csv"))
 ```
 
 {{< pagebreak >}}
@@ -85,31 +90,31 @@ This is where the abstract will go.
 
 # `r rmarkdown::metadata$title`
 
-# Introduction
+# Introduction {#sec-introduction}
 
-Despite the fact that all languages modulate F0 to encode pragmatic meaning [@arvaniti2020autosegmental], the L2 classroom typically lacks explicit content on intonation. When encountering the L2 outside of the classroom, the lack of instruction on intonation could leave learners disadvantaged in perception [@casillas2023using] and production [@herrero2020unintentional]. Intonation provides one avenue for modulating politeness [@brown1987politeness], without which could lead to miscommunication when intonation-politeness mappings do not match between the L1 and L2 [@estebas2014evaluation].
+Despite the fact that all languages modulate fundamental frequency (F0; the rate of vocal fold vibration perceived as pitch) to encode pragmatic meaning [@arvaniti2020autosegmental], language classes typically lacks explicit content on intonation. When encountering the second language (L2) outside of the classroom, the lack of instruction on intonation could leave learners disadvantaged in perception [@casillas2023using] and production [@herrero2020unintentional]. Intonation provides one avenue for modulating politeness [@brown1987politeness], without which could lead to miscommunication when intonation-politeness mappings do not match between the L1 and L2 [@estebas2014evaluation].
 
 Outside of the L2 classroom, intonation in modern linguistics is only recently receiving more attention. Where previous models treated intonation with the goals of speech synthesis [@hart1990perceptual] or pedagogy [@pike1945intonation], @ladd2008intonational and colleagues spearheaded the field of intonational phonology and developed the Autosegmental Metrical theory of intonational phonology (henceforth AM) from which to study intonation from a phonological perspective. The vast majority of research on intonation investigates monolingual speakers, but there do exist recent works that investigate the acquisition of L2 intonation [@nibert2005acquisition; @astruc2016intonational], as well as attempt to model L2 intonation [@mennen2015beyond]. Other researchers attempt to find universals among the uses of pitch, such as finding a relationship between higher pitch and greater politeness [@ohala1983cross; @brown1974theory].
 
 The current research undertaken here investigates the L2 intonation system by looking at L1 English L2 Spanish intonational strategies to express varying levels of politeness. L2 Spanish utterances will be annotated using ToBI within AM framework, and pitch contours will be compared with expected L1 Spanish nuclear configurations. Furthermore, the mean pitch of the utterance and the height of the final boundary tone will be investigated as a function of politeness to see if there is support for a universal association between high pitch and politeness.
 
-## Politeness
+## Politeness {#sec-politeness}
 
-@brown1987politeness provide a landmark investigation in linguistic expressions of politeness. In their conception, politeness strategies are used to mitigate face threatening acts, which can attack an individual's negative face, one's basic claim to freedom of action and from imposition, or positive face, the self-image one has of oneself and the desire for it to be appreciated and approved of. Politeness strategies are similarly divided into negative politeness strategies, used to minimize the effects of an inevitable face threatening act, and positive politeness strategies, where an individual attempts to align themselves closer with the interlocutor and demonstrate that they share their desires. For example, negative politeness strategies may include being pessimistic about the interlocutor's response to a request, using questions, and using more complex syntax to hedge (e.g., in Spanish, the imperfect subjunctive); positive politeness strategies, on the other hand, may include using in-group identity markers, seeking agreement on safe topics, or presupposing common ground.
+@brown1987politeness provide a landmark investigation in linguistic expressions of politeness. In their conception, politeness strategies are used to mitigate face threatening acts (FTA), which are any communicative act that inherently risks damaging the face, or self-esteem, of the speaker or listener. In their framework, FTAs can attack an individual's negative face, one's basic claim to freedom of action and from imposition, or positive face, the self-image one has of oneself and the desire for it to be appreciated and approved of. Politeness strategies are similarly divided into negative politeness strategies, used to minimize the effects of an inevitable face threatening act, and positive politeness strategies, where an individual attempts to align themselves closer with the interlocutor and demonstrate that they share their desires. For example, negative politeness strategies may include being pessimistic about the interlocutor's response to a request, using questions, and using more complex syntax to hedge (e.g., in Spanish, the imperfect subjunctive); positive politeness strategies, on the other hand, may include using in-group identity markers, seeking agreement on safe topics, or presupposing common ground.
 
-The decision to opt for a specific politeness strategy depends on a cost-benefit analysis of three binary factors: power, social distance, and level of imposition of request. These three independent variables, @brown1987politeness claim, are assigned different values cross-culturally, which account for the rich diversity in cultures globally.
+@brown1987politeness claim that the decision to opt for a specific politeness strategy depends on a cost-benefit analysis of three binary factors: power, social distance, and level of imposition of request. These three independent variables are assigned different values cross-culturally, which account for the rich diversity in cultures globally.
 
-Power can come from both material and metaphysical sources. Naturally, certain conceptions of power can have more sway in some contexts than others. Monetary power in a bargaining situation would hold much more sway than in a situation where a student is asking for help on an essay from a writing center.
+Power, as defined by @brown1987politeness, can come from both material and metaphysical sources. Naturally, certain conceptions of power can have more sway in some contexts than others. Monetary power in a bargaining situation would hold much more sway than in a situation where a student is asking for help on an essay from their college's writing center.
 
-Social distance is characterized by how socially close two individuals are. For example, the social distance between two siblings are typically much lower than the social distance between two students who don't know each other. Of note, a student and a professor who have a close relationship may have a very low social distance, but an imbalance of power. Significantly, social distance here does not refer directly to the distance assigned to them based on their station, but to their personal relationship.
+@brown1987politeness define social distance is characterized by how socially close two individuals are. For example, the social distance between two siblings are typically much lower than the social distance between two students who don't know each other. Of note, a student and a professor who have a close relationship may have a very low social distance, but an imbalance of power. Significantly, social distance here does not refer directly to the distance assigned to them based on their station, but to their personal relationship.
 
-Finally, the level of imposition of request transparently refers to how imposing the request is. For example, asking someone to borrow a pencil is a low imposition in nearly all situations; however, asking anyone at all to borrow their expensive laptop proves to be a much higher imposition.
+Finally, @brown1987politeness define the level of imposition of request transparently refers to how imposing the request is, regardless of whether it is material, such as money, or non-material, such as information. For example, asking someone to borrow a pencil is a low imposition in nearly all situations; however, asking anyone at all to borrow their expensive laptop proves to be a much higher imposition.
 
-In the current study, the three identified factors will be closely controlled for in the context of the United States university environment, appealing to the target population of college students. The specific situations will be defined below.
+In the current study, the three identified factors will be closely controlled for in the context of the United States university environment, appealing to the target population of college students. A general description of the situations can be found in @sec-dct, and the full task can be found in (*ADD APPENDIX*).
 
-## Autosegmental Metrical (AM) Theory
+## Autosegmental Metrical (AM) Theory {#sec-am-theory}
 
-Within the AM framework [@ladd2008intonational], the continuous phonetic cue F0 is mapped categorically to ordered strings of Low (L) and High (H) tones that attach to stressed syllables, called pitch accents, and edges of phrases, called boundary tones. Significantly, the phonological representations are not meant to include all elements of pitch modulation, just as all phonetic elements are not recorded for segments. That is, phonetically distinct contours may be realization of the very same underlying phonological element. Thus, the goal of AM is not to record every phonetic detail of F0, but to understand how F0 maps to discrete, categorical tones that express meaning [@ladd2022trouble].
+Within the AM framework [@ladd2008intonational], the continuous phonetic cue F0 is mapped categorically to ordered strings of Low (L) and High (H) tones that attach to stressed syllables, called pitch accents, and edges of phrases, called boundary tones. Significantly, the phonological representations are not meant to include all elements of pitch modulation, just as all phonetic elements are not recorded for segments. That is, phonetically distinct contours may be a realization of the very same underlying phonological element. Thus, the goal of AM is not to record every phonetic detail of F0, but to understand how F0 maps to discrete, categorical tones that express meaning [@ladd2022trouble].
 
 The abstract, phonological representation of intonation with the AM framework is carried out through the Tones and Breaks Indices (ToBI) tool, originally developed for General American English [@silverman1992tobi]. This tool has also been developed for Spanish, called Sp_ToBI [@beckman2002intonation]. Of note is that ToBI requires that each variety of a language have its own ToBI defined, based on its individual intonational inventory. For example, various varieties of English [@grice2020intonation; @mayo1997prosodic; @silverman1992tobi] and Spanish [@prieto2010transcription] have since been documented using ToBI.
 
@@ -117,7 +122,7 @@ The abstract, phonological representation of intonation with the AM framework is
 
 ```{r}
 #| label: fig-tobi-example
-#| fig-cap: Spectrogram and pitch track (blue) of the utterance "Ana lleva el abrigo" ("Ana is wearing a coat") labeled using ToBI.
+#| fig-cap: Spectrogram and pitch track (blue) of the braod focus declarative "Ana lleva el abrigo" ("Ana is wearing a coat") labeled using ToBI.
 knitr::include_graphics(
   here("figs", "tobi_example.png")
   )
@@ -125,7 +130,7 @@ knitr::include_graphics(
 
 On the tone tier, pitch accents are represented with **\*** (e.g., H\* represents a High tone associated with a stressed syllable), while **%** is associated with boundary tones (e.g. H% is a High boundary tone at the end of a phrase). A **-** is used to represent a phrase boundary that is not utterance final (e.g., H- is a High phrase boundary). As mentioned above, tones can be combined to represent rises and falls, and when used as pitch accents, the **\*** indicates the tone that is most associated with the stressed syllable. For example, H\*L is a fall where the stressed syllable is affiliated with the H tone; HL\* is a fall where the stressed syllable is affiliated with the L tone. Crucially, each ToBI system will define how an underlying representation can be realized, such that "H\*L" may be realized as the phonetically differently in two different languages or two different varieties of the same language.
 
-It is commonly found that there is a distinction between "prenuclear" and "nuclear" pitch accents, where the nuclear pitch accent is the rightmost pitch accent, and all those that come before it are prenuclear. Typically, studies documenting intonation in the AM framework find that there are restrictions as to which tones can occur in prenuclear vs nuclear position, but overall there is overlap. Documentary work involves determining which pitch accents can occur in which positions for which utterance types (@fig-pitch-accent-example).
+It is commonly found that there is a distinction between "prenuclear" and "nuclear" pitch accents, where the nuclear pitch accent is the rightmost pitch accent, and all those that come before it are prenuclear. Typically, studies documenting intonation in the AM framework find that there are restrictions as to which tones can occur in prenuclear versus nuclear position, but overall there is overlap. Documentary work involves determining which pitch accents can occur in which positions for which utterance types (@fig-pitch-accent-example).
 
 ```{r}
 #| label: fig-pitch-accent-example
@@ -139,7 +144,7 @@ Despite the previous claim that intonation is mapped to categorical tones, there
 
 Although there is clearly evidence for a gradient approach to perception of intonation, there is less research that investigates production. This study will help contribute to this body of literature by investigating the height of boundary tones in the production of L1 English L2 Spanish learners to indicate politeness. Under the frequency code [@ohala1983cross], which will be explained below,it's predicted that higher levels of politeness would be associated with a higher boundary tone pitch. That is, in this study, where power, social distance, and level of imposition of the request are set to [+], we would expect the highest boundary tones, and for the boundary tone to become gradiently lower as the independent variables are step-wise set to [-].
 
-## L2 Intonation
+## L2 Intonation {#sec-l2-intonation}
 
 AM has been primarily developed to investigate L1 intonation, but there have been recent attempts to expand intonation investigation into the L2 domain. For example, @mennen2015beyond has proposed the theoretical model L2 Intonation Learning Theory (LILt). Four dimensions of intonation are recognized under this model with the goal of characterizing the similarities and differences between the intonation inventories between two languages:
 
@@ -155,7 +160,7 @@ The differences here have a significant impact on the acquisition of Spanish by 
 
 The intonation of Spanish in L1 English L2 Spanish learners will be investigated under the basic tenets of AM, using ToBI to document their underlying contours, as well as work to test the LILt model's predictions on L1-L2 intonation transfer. Broadly, it is expected that where General American English and Spanish match along the aforementioned dimensions, L1 English L2 Spanish learners will experience positive transfer; where there are mismatches along any of the dimensions, they will experience negative transfer. That is, we expect to see typical L1 English contours in their L2 Spanish.
 
-## Pitch and Politeness
+## Pitch and Politeness {#sec-pitch-politeness}
 
 Although AM takes for granted the arbitrary nature of sound to meaning correspondences that dominate human language, some researchers propose that some aspects of pitch-meaning correspondences are non-arbitrary. For example, @ohala1983cross, in his "frequency code", the use of pitch in human language evolved from a cross-species use of F0, where higher pitch is "nonthreatening, submissive, subordinate, in need of the receiver's cooperation and good will", whereas lower pitch is "aggressive, assertive..." (p. 8). He claims that these correspondences are cross-linguistic, citing the universality of F0's use to distinguish sentence modality. That is, cross-linguistically, low pitch is associated with statements ("assertiveness"), whereas high pitch is associated with questions ("in need of the receiver's cooperation and good will"). Under this belief, using higher pitch is a cross-linguistic method of expressing politeness.
 
@@ -165,11 +170,11 @@ Given the cited research, it would be expected that some of the earliest politen
 
 Importantly, as demonstrated by @estebas2014evaluation, a broader pitch range in a given *pitch accent* is not always positively associated with politeness. As such, this, along with the frequency code [@ohala1983cross], gives motivation to examine pitch more broadly along two dimensions: the overall mean pitch of an utterance and the height of the final boundary tone of the utterance.
 
-# The Present Study
+# The Present Study {#sec-present}
 
-Few studies have worked to document the intonation of L2 Spanish [@nibert2005acquisition; @henriksen2010development], and even fewer still have investigated the intersection of intonation and politeness [@herrero2020unintentional, @astruc2016intonational]. The present study aims to document the most common nuclear pitch accents and boundary tones for requests produced by L1 English L2 Spanish speakers, which will then be examined through the lens of the LILt model [@mennen2015beyond]. Furthermore, this study aims to put the frequency code to the test [@ohala1983cross] by examining pitch height (at the utterance-level and at the final boundary tone) as a function of politeness.
+Few studies have worked to document the intonation of L2 Spanish [@nibert2005acquisition; @henriksen2010development], and even fewer still have investigated the intersection of intonation and politeness [@herrero2020unintentional; @astruc2016intonational]. The present study aims to document the most common nuclear pitch accents and boundary tones for requests produced by L1 English L2 Spanish speakers, which will then be examined through the lens of the LILt model [@mennen2015beyond]. Furthermore, this study aims to put the frequency code to the test [@ohala1983cross] by examining pitch height (at the utterance-level and at the final boundary tone) as a function of politeness.
 
-# Previous Research
+# Previous Research {#sec-previous}
 
 Spanish intonation is rarely explicitly taught in the L2 classroom. However, this seems a disservice to L2 learners, as evidenced by the possible miscommunications evinced by @estebas2014evaluation (see above for analysis). The possible miscommunications due to intonation were further explored by @herrero2020unintentional. In their study, L1 Mandarin Chinese L2 Spanish speakers produced polite requests in Spanish that were then rated by L1 Spanish speakers on a 6-point Likert scale, where 0 was most impolite and 5 was most polite. It was found that even when other pragmatic strategies were used to mitigate impoliteness, such as lexical features (e.g., *gracias* "thank you"), the speakers were still perceived overall as impolite. @herrero2020unintentional claim that the perceived impoliteness was due to the use of zig zag patterns and falling contours, which are described as impolite melodic patterns in Spanish [@devis2011entonacion]. The present study hopes to continue pushing for the inclusion of intonation in the L2 classroom by demonstrating the miscommunications that may occur if L2 learners do not acquire intonation.
 
@@ -179,34 +184,55 @@ In their analysis of L2 corpus's intonation, @astruc2016intonational found that 
 
 Although we do not expect to see the same intonation contours as @astruc2016intonational due to dialect differences (they studied UK English speakers, the present study investigates Americans), we do expect to see L1-L2 transfer, as they did, as well as a broader pitch excursion as compared to monolingual L1 Spanish speakers.
 
-## Research Questions
+## Research Questions {#sec-rq}
 
-Our first research question is exploratory in nature, whereas our third research question is experimental.
+Our first two research questions are exploratory in nature, whereas our third research question is experimental.
 
 1. What pitch accents do L1 General American English L2 Spanish learners use for requests in Spanish?
 
-Based on @astruc2016intonational, we expect there to be L1-L2 transfer of pitch contours, such that L1 English pitch contours will be used in the L2 Spanish.
-
+Based on the analysis of L1 British English L2 Spanish by @astruc2016intonational, we expect there to be L1-L2 transfer of pitch contours, such that L1 English pitch contours will be used in the L2 Spanish.
 
 2. Do pitch accents map categorically to the independent variables power, social distance, and level of imposition of request [@brown1987politeness]?
 
-Due to insufficient previous data in this domain, we must rely on L1 research to inform our hypothesis. @astruc2016intonational reported that in their L1 corpus, only the level of imposition of the request presented a categorical usage of pitch accent, and so we expect here similar results: power and social distance will not categorically map to pitch accents, but level of imposition of request will.
+Due to insufficient previous data in L2 Spanish, we must rely on L1 Spanish research to inform our hypothesis. @astruc2016intonational reported that in their L1 corpus, only the level of imposition of the request presented a categorical usage of pitch accent, and so we expect here similar results: power and social distance will not categorically map to pitch accents, but level of imposition of request will.
 
 3. Does higher pitch correlate with higher politeness [@ohala1983cross]?
 
 This question will be examined quantitatively in two ways. First, the overall mean pitch of the utterance will be examined, and then the height of the final boundary tone. These two measures have been chosen due to their salience in the speech stream.
 
-# Methods
+# Methods {#sec-methods}
 
-## Stimuli
+## Participants {#sec-participants}
 
-The experimental stimuli were designed as a discourse completion task (DCT) that controlled for power, social distance, and level of imposition [@brown1987politeness], all of which had two steps for a total of 8 conditions [@tbl-conditions]. The general contexts for each condition were created with the target population, college students, in mind, so that the person to which they were speaking in the DCT was a sibling, a professor, or another student. Each condition had 3 items, for a total of 24 items. Experimental stimuli were written by the first author and reviewed by a native speaker of Chilean Spanish who has experience teaching Spanish to the target population. For a full list of stimuli SEE APPENDIX [ADD APPENDIX].
+This study aimed to investigate the prosodic features that characterize high proficiency L1 English L2 Spanish speaker Spanish utterances modulated by level of politeness. *N* adults (female: *N*), ranging in age from *AGE* (mean: *MEAN*, sd: *SD*), participated in the study. All participants acquired English as their L1 and began learning Spanish after age *AGE* (mean: *MEAN*, sd: *SD*), and they did not have any knowledge of any languages other than English and Spanish. Subjects were recruited from intermediate and advanced Spanish classes, and their hour-long participation was compensated for by extra credit in their course. For a full description of individual participants, see @tbl-participants (*CURRENTLY SHOWING PILOT DATA*).
+
+```{r}
+#| label: tbl-participants
+#| tbl-cap: "Participant information."
+
+kable(
+  participant_data,
+  format = "markdown",
+  col.names = c("Participant", "Gender", "Age (years)", "Began Learning Spanish (years)", "LexTALE Score", "Study Abroad Experience (months)")
+)
+
+```
+
+## Tasks {#sec-tasks}
+
+The study consisted of three tasks: a DCT task, a lexical decision vocabulary assessment, and a language background questionnaire. The DCT was administered in person by the researcher, while the latter two tasks were presented online.
+
+### Discourse Completion Task {#sec-dct}
+
+The experimental stimuli were designed as a discourse completion task (DCT) that controlled for power, social distance, and level of imposition [@brown1987politeness], all of which had two steps for a total of 8 conditions [@tbl-conditions]. The design is similar to other DCTs completed for prosodic analysis [@prieto2010transcription; @astruc2016intonational].
+
+The general contexts for each condition were created with the target population, college students, in mind, so that the person to which they were "speaking" in the DCT was a sibling, a professor, or another student. Each condition had 3 items, for a total of 24 items. Experimental stimuli were written by the first author and reviewed by a native speaker of Chilean Spanish who has experience teaching Spanish to the target population. For a full list of experimental stimuli *SEE APPENDIX [ADD APPENDIX]*.
 
 ```{r}
 #| label: tbl-conditions
 #| tbl-cap: "Conditions for experimental stimuli."
 
-data <- data.frame(
+stimuli_conditions <- data.frame(
   Condition = 1:8,
   Power = c("-", "-", "+", "+", "+", "+", "-", "-"),
   Distance = c("-", "-", "+", "+", "-", "-", "+", "+"),
@@ -224,14 +250,36 @@ data <- data.frame(
 )
 
 kable(
-  data,
-  format = "markdown", # Use markdown for Word compatibility
+  stimuli_conditions,
+  format = "markdown",
   col.names = c("Condition", "Power", "Distance", "Level of Imposition", "Context")
 )
 
 ```
 
-## Procedure
+### LexTALE {#sec-lextale}
+
+Spanish proficiency was assessed through the Lexical Test for Advanced Learners of Spanish (LexTALE-ESP, henceforth LexTALE) [@izura2014lextale]. The LexTALE is a lexical decision experiment that provides a standardized assessment of vocabulary size in Spanish. Participants are exposed to a series of real and pseudowords on the computer screen, and they must decide if the word is real or fake. LexTALE scores can range from -20 to 60. Monolingual Spanish speakers generally score above 50, whereas individuals with little or no knowledge tend to score negative. Adult learners with low to medium proficiency range from 0 to 25, and advanced learners generally score above 25. Proficiency here is treated as a continuous variable. Participant scores in our data ranged from *RANGE* (mean: *MEAN*, sd: *SD*).
+
+### Language Background Questionnaire {#sec-lang-bg-q}
+
+Participants completed a language background questionnaire that queried their gender, age, at what age they began learning Spanish, and how many months they have lived in a Spanish-speaking country [*ADD APPENDIX*]. The last factor was not treated in the current analysis.
+
+## Procedure {#sec-procedure}
+
+Participants were interviewed in a sound booth *(ADD SOUND BOOTH INFO)* using a *(ADD MICROPHONE INFO)*. The interviewer read the situation to them, after which the participant responded. Participants were allowed as many repetitions of the stimuli as necessary, and if the participant was unfamiliar with any given word in the stimuli, they were provided the English translation. They were not, however, provided any feedback or aid for their responses. After participants completed the DCT, they were administered the LexTALE and language background questionnaire. The DCT took approximately 30 minutes to complete, while the LexTALE and language background questionnaire took approximately 5 minutes in total to complete.
+
+Participants were excluded from the data in the following circumstances: error during data collection, clear lack of understanding or engagement during the DCT or LexTALE task, participants reporting having learned Spanish before the age of 13, or participants with knowledge of languages other than English and Spanish. A total of *N* participants met the criteria for inclusion.
+
+## Analysis
+
+### Intontational Analysis {#sec-int-analysis}
+
+### Statistical Analysis {#sec-stats-analysis}
+
+# Results
+
+# Discussion
 
 # Scraps
 
@@ -240,7 +288,6 @@ Due to the limited data available to them, @astruc2016intonational called for st
 This study will investigate polite requests in L1 English L2 Spanish learners through a discourse completion task (DCT). 
 
 Fundamental frequency (F0), and its phonological correlate pitch, is used cross-linguistically for a variety of functions. While some languages modulate F0 at both lexical and post-lexical levels, some languages, such as English and Spanish, primarily modulate F0 at the post-lexical level. At this level, we refer to the modulation as "intonation", in which case it encodes pragmatic meaning and phrase boundaries.
-
 
 Given these proposals, it would be expected that prosodic features may be some of the first politeness strategies positively transferred from the L1 to the L2, due to the crosslinguistic similarities and ready availability. A variety of politeness strategies require more complex morpho-syntactic transformations (cite brown here), but something as simple as using higher pitch to express increasing politeness is something available to even the most neophyte language learner. This study aims to investigate the intonational resources that L2 Spanish speakers have available to them.
 

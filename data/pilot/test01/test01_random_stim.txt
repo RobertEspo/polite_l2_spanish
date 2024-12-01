@@ -6,40 +6,58 @@ a. Imagine que recién empezó el semestre y aún no conoces bien a tu profesora
 a. Imagina que estás tomando una clase muy difícil y te está dando problemas. Decides pedirle a la chica más inteligente de la clase que te dé tutorías. ¿Qué le dirías?
 [+P, +D, -L] (unfamiliar professor)
 c. Imagina que estás tomando una clase. No conoces bien a la profesora. Ella mencionó un artículo que te parece interesante. Después de la clase, decides hablar con ella y pedirle que te mande la información del artículo para buscarlo. ¿Qué le dirías?
+
 [+P, -D, -L] (familiar professor)
 c. Imagina que estás tomando una clase con una profesora a la que conoces bien. Tuviste una pequeña duda con una de las preguntas en la tarea, así que decides hablar con la profesora después de la clase. Quieres saber si tiene un minuto para hablar contigo sobre la pregunta. ¿Qué le dirías?
+
 [-P, +D, -L] (unfamiliar student)
 a. Imagina que tienes que hacer un proyecto en una clase en pares. Nunca has conocido a la muchacha con quien vas a trabajar. Después de la clase, hablas con ella para pedirle su número de teléfono. ¿Qué le dirías?
+
 [-P, -D, +L] (sibling)
 c. Imagina que vas a la fiesta de cumpleaños de un amigo en un restaurante caro, pero no tienes el dinero suficiente como para comprarle un regalo y pagar la cena. Sería vergonzoso pedir dinero prestado, pero decides pedirle a tu hermana que te preste cuarenta dólares. ¿Qué le dirías?
+
 [+P, +D, +L] (unfamiliar professor)
 a. Imagina que tienes una reunión con tu consejera, una profesora a la que no conoces bien. Quieres dejar una clase, pero la fecha límite ya ha pasado. Aunque sabes que es mucho pedir, quieres intentarlo. ¿Qué le dirías?
+
 [-P, -D, +L] (sibling)
 a. Imagina que estás en casa con tu hermana y se rompió tu computadora. Tienes que estar en clase en treinta minutos y necesitas una computadora para la clase. Sabes que tu hermana no necesita su computadora ese día. ¿Qué le dirías?
+
 [+P, -D, -L] (familiar professor)
 a. Imagina que estás tomando cuatro clases avanzadas este semestre. Tienes una profesora que ya has tenido varias veces y a la que conoces bien. En su clase, necesitas una extensión de un día para una tarea pequeña. Vas a su oficina para pedírsela. ¿Qué le dirías?
+
 [+P, -D, +L] (familiar professor)
 b. Imagina que estás tomando una clase con una profesora a la que conoces bien. Tu hermana se casa en una semana y tienes varios eventos relacionados con la boda en los dos días de clase. No quieres perder algo tan especial. Sabes que es mucho pedir, pero vas a la oficina de tu profesora para pedirle que te deje faltar esos dos días de clase. ¿Qué le dirías?
+
 [-P, +D, +L] (unfamiliar student)
 b. Imagina que estás trabajando en tu ensayo final. Ya has escrito el borrador y quieres que la persona más inteligente de la clase lo revise. No la conoces bien, y el borrador es muy largo. Después de clase, hablas con ella para pedirle que repase tu borrador. ¿Qué le dirías?
+
 [-P, +D, -L] (unfamiliar student)
 c. Imagina que es el primer día de clase y no conoces a nadie. La profesora acaba de decir algo importante, pero estabas distraído/a. Decides preguntarle a la chica al lado tuyo qué dijo la profesora. ¿Qué le dirías?
+
 [+P, +D, +L] (unfamiliar professor)
 c. Imagina que estás tomando una clase muy avanzada. Estás aplicando a un internship en el área de tu especialización. Necesitas una carta de recomendación de un experto en dicha especialización. No conoces bien a la profesora de tu clase, pero es una experta. Decides ir a su oficina para pedirle una carta de recomendación, aunque sabes que es mucho pedir. ¿Qué le dirías?
+
 [-P, -D, -L] (sibling)
 b. Imagina que estás en casa con tu hermana. Está sentada al lado de la ventana. Hace mucho calor en la casa, pues quieres que abra la ventana. ¿Qué le dirías?
+
 [+P, -D, +L] (familiar professor)
 c. Imagina que tienes que escribir una tesis para tu año final en la universidad, pero necesitas un profesor que sea tu consejero. Ya tienes una profesora en mente porque la conoces bien y ya has tomado varias clases con ella. Sin embargo, es una persona muy ocupada. Igual, vas a su oficina para pedir que ella sea tu consejera. ¿Qué le dirías?
+
 [+P, -D, -L] (familiar professor)
 b. Imagina que estás tomando una clase con una profesora a la que conoces bien. Tienes que escribir un ensayo, pero te está costando encontrar artículos sobre el tema. Vas a la oficina de la profesora para pedirle unos artículos, porque conoce bien el tema. ¿Qué le dirías?
+
 [-P, -D, +L] (sibling)
 b. Imagina que estás en casa con tu hermana y tu carro no arranca. Tienes clase en una hora y el campus está a treinta minutos. Sabes que sería mucho pedirle que te lleve, pero decides pedirle igualmente a tu hermana que te lleve y te recoja. ¿Qué le dirías?
+
 [+P, +D, -L] (unfamiliar professor)
 b. Imagina que te está dando problemas una clase y pronto tendrás tu primer examen. No conoces bien a la profesora. Decides ir a su oficina para pedirle recomendaciones para estudiar. ¿Qué le dirías?
+
 [+P, +D, +L] (unfamiliar professor)
 b. Imagina que estás tomando una clase con más de cien estudiantes. No conoces bien a la profesora. Tienes un examen pronto, pero el día del examen, ya tienes un evento importante que no quieres perder. Decides ir a la oficina de la profesora y pedirle que te deje tomar el examen otro día. Sabes que es mucho pedir, pero igual quieres intentarlo. ¿Qué le dirías?
+
 [-P, +D, +L] (unfamiliar student)
 c. Imagine que se te olvidó hacer una tarea para clase y solo te quedan quince minutos. Ves a una persona de tu clase, pero no la conoces bien. Decides preguntarle si te puede ayudar para terminar la tarea más rápido. ¿Qué le dirías?
+
 [-P, +D, -L] (unfamiliar student)
 b. Imagina que es el primer día de clase y no conoces a nadie. Se te olvidó traer un bolígrafo. Viste que la muchacha al lado tuyo tiene varios bolígrafos. ¿Qué le dirías?
 [-P, -D, -L] (sibling)
