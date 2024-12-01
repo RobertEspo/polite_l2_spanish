@@ -1,8 +1,8 @@
 form Arguments
-	sentence wav_directory C:\Users\rober\Desktop\tests
-	sentence textgrid_directory C:\Users\rober\Desktop\tests
-	positive tier_syllables 3
-	sentence output C:\Users\rober\Desktop\polite_l2_spanish\data\pilot\test01\test01_output.txt
+	sentence wav_directory C:\Users\rober\Desktop\polite_l2_spanish\data\pilot\test01
+	sentence textgrid_directory C:\Users\rober\Desktop\polite_l2_spanish\data\pilot\test01
+	positive tier_utterance 1
+	sentence output C:\Users\rober\Desktop\polite_l2_spanish\data\pilot\test01\test01_utterance_output.txt
 endform
 
 appendInfoLine: "Debug 0: INITIATE"
@@ -31,13 +31,13 @@ for ifile to numberOfFiles
     
 	appendInfoLine: "Debug 7: WAV exists: ", fileReadable(wav_path$)
 
-	call mean_boundary_tone 'textgrid_path$' 'wav_path$'
+	call mean_utterance 'textgrid_path$' 'wav_path$'
 	
 endfor
 
 ###
 
-procedure mean_boundary_tone textgrid_path$ wav_path$
+procedure mean_utterance textgrid_path$ wav_path$
 	appendInfoLine: "Debug 8: ", textgrid_path$
 	appendInfoLine: "Debug 9: ", wav_path$
 	if fileReadable (textgrid_path$) and fileReadable (wav_path$)
@@ -46,12 +46,12 @@ procedure mean_boundary_tone textgrid_path$ wav_path$
 		textgrid = selected("TextGrid")
 		appendInfoLine: "Debug 11: Textgrid ", textgrid ," selected."
 		
-		finalInterval = Get number of intervals... tier_syllables
+		finalInterval = Get number of intervals... tier_utterance
 		appendInfoLine: "Debug 12: Number of intervals = ", finalInterval
 
 		if finalInterval > 0
-			startTime = Get start time of interval: tier_syllables, finalInterval - 1
-			endTime = Get end time of interval: tier_syllables, finalInterval - 1
+			startTime = Get start time of interval: tier_utterance, finalInterval - 1
+			endTime = Get end time of interval: tier_utterance, finalInterval - 1
 			appendInfoLine: "Debug 13: got start and end times: " + string$(startTime) + " " + string$(endTime)
 
 			Read from file... 'wav_path$'
