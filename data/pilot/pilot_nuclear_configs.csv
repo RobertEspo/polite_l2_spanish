@@ -1,0 +1,25 @@
+﻿participant,condition,item,nuclear_pitch_accent,boundary_tone,nuclear_configuration
+test00,001,a,L,H,L* H%
+test00,001,b,L,H,L* H%
+test00,001,c,L+H,H,L+H* H%
+test00,011,a,L,H,L* H%
+test00,011,b,L+H,H,L+H* H%
+test00,011,c,L,H,L* H%
+test00,101,a,L,H,L* H%
+test00,101,b,L,H,L* H%
+test00,101,c,L,H,L* H%
+test00,111,a,L,H,L* H%
+test00,111,b,L,H,L* H%
+test00,111,c,L,H,L* H%
+test01,001,a,L,H,L* H%
+test01,001,b,L,H,L* H%
+test01,001,c,L+H,H,L+H* H%
+test01,011,a,L,H,L* H%
+test01,011,b,L,L,L* L%
+test01,011,c,L,H,L* H%
+test01,101,a,L,L,L* L%
+test01,101,b,L,L,L* L%
+test01,101,c,L,H,L* H%
+test01,111,a,L,L,L* L%
+test01,111,b,L,L,L* L%
+test01,111,c,L,L,L* L%

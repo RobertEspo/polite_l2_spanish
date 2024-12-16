@@ -66,7 +66,8 @@ library("kableExtra")
 library("tidyverse")
 
 # Load data
-participant_data <- read_csv(here("data","pilot","participants.csv"))
+participant_data <- read_csv(here("data","pilot","pilot_participants.csv"))
+nuclear_configs <- read_csv(here("data", "pilot", "pilot_nuclear_configs.csv"))
 ```
 
 {{< pagebreak >}}
@@ -186,7 +187,7 @@ Although we do not expect to see the same intonation contours as @astruc2016into
 
 ## Research Questions {#sec-rq}
 
-Our first two research questions are exploratory in nature, whereas our third research question is experimental.
+My first two research questions are exploratory in nature, whereas our third research question is experimental.
 
 1. What pitch accents do L1 General American English L2 Spanish learners use for requests in Spanish?
 
@@ -196,7 +197,7 @@ Based on the analysis of L1 British English L2 Spanish by @astruc2016intonationa
 
 Due to insufficient previous data in L2 Spanish, we must rely on L1 Spanish research to inform our hypothesis. @astruc2016intonational reported that in their L1 corpus, only the level of imposition of the request presented a categorical usage of pitch accent, and so we expect here similar results: power and social distance will not categorically map to pitch accents, but level of imposition of request will.
 
-3. Does higher pitch correlate with higher politeness [@ohala1983cross]?
+3. Does higher pitch correlate with contexts that would require greater degrees of politeness [@ohala1983cross; @brown1987politeness]?
 
 This question will be examined quantitatively in two ways. First, the overall mean pitch of the utterance will be examined, and then the height of the final boundary tone. These two measures have been chosen due to their salience in the speech stream.
 
@@ -220,7 +221,7 @@ kable(
 
 ## Tasks {#sec-tasks}
 
-The study consisted of three tasks: a DCT task, a lexical decision vocabulary assessment, and a language background questionnaire. The DCT was administered in person by the researcher, while the latter two tasks were presented online.
+The study consisted of three tasks: a discourse completion task (DCT), a lexical decision vocabulary assessment, and a language background questionnaire. The DCT was administered in person by the researcher, while the latter two tasks were presented online.
 
 ### Discourse Completion Task {#sec-dct}
 
@@ -267,19 +268,51 @@ Participants completed a language background questionnaire that queried their ge
 
 ## Procedure {#sec-procedure}
 
-Participants were interviewed in a sound booth *(ADD SOUND BOOTH INFO)* using a *(ADD MICROPHONE INFO)*. The interviewer read the situation to them, after which the participant responded. Participants were allowed as many repetitions of the stimuli as necessary, and if the participant was unfamiliar with any given word in the stimuli, they were provided the English translation. They were not, however, provided any feedback or aid for their responses. After participants completed the DCT, they were administered the LexTALE and language background questionnaire. The DCT took approximately 30 minutes to complete, while the LexTALE and language background questionnaire took approximately 5 minutes in total to complete.
+Participants were interviewed in a sound booth *(ADD SOUND BOOTH INFO)* using a *(ADD MICROPHONE INFO)*. The interviewer read the situation to them, after which the participant responded. Participants were allowed as many repetitions of the stimuli as necessary, and if the participant was unfamiliar with any given word in the stimuli, they were provided the English translation. They were not, however, provided any feedback or aid for their responses. After participants completed the DCT, they were administered the LexTALE and language background questionnaire. The two assessments were delivered at the testing site. The DCT took approximately 30 minutes to complete, while the LexTALE and language background questionnaire took approximately 5 minutes in total to complete.
 
 Participants were excluded from the data in the following circumstances: error during data collection, clear lack of understanding or engagement during the DCT or LexTALE task, participants reporting having learned Spanish before the age of 13, or participants with knowledge of languages other than English and Spanish. A total of *N* participants met the criteria for inclusion.
 
-## Analysis
-
-### Intontational Analysis {#sec-int-analysis}
-
-### Statistical Analysis {#sec-stats-analysis}
-
 # Results
 
+The corpus is formed of 50 speech acts produced by two participants. Due to pitch tracking errors in Praat or creaky voice, three utterances have been removed from the sample pool, for a total of 47 speech acts subject to quantitative analysis. The data were first transcribed orthographically, and then the intonation was analyzed using ToBI. 
+
+The mean pitch of the overall speech act and the mean pitch of the boundary tone, operationalized here as the final syllable, were extracted using Praat's Get Pitch function using a range of 75-600 Hz. The values in Hz were then standardized. The standardized values were used as the dependent variable in a Bayesian model using the brms package in R [@burkner2017brms; @manual2024r] using the three independent variables of politeness, which were all treated as categorical values: power, social distance, and level of imposition of request [@brown1987politeness]. Default priors and posterior predictive checks were conducted to assess model fit. 
+
+## Intontational Analysis {#sec-int-analysis}
+
+Due to the time-consuming nature of intonational analysis, only the impact of the variable "level of imposition of request" will be examined.
+
+For speech acts that would require request something that would be of high imposition (e.g., to borrow a laptop, to request the review of a long essay), participants favored using interrogatives with rises. L1 Spanish typically makes a distinction between various types of rises in the nuclear configuration (i.e., the final pitch accent and boundary tone). Of interest here are the rises L+H* H% and L* H% [@Aguilar2009]. Participants primarily used the low rise, L* H% [@fig-eg-lh]. Only participant labeled test01 produced speech acts that did not include any interrogative, in which case she used the nuclear configuration L* L%. Of interest is that when she did produce declaratives, it was typically accompanied by an earlier pitch accent that was particularly higher than her typical realizations of H*.
+
+@tbl-nuclear-configs gives a full summary of the nuclear configurations used in these speech acts.
+
+```{r}
+#| label: fig-eg-lg
+#| fig-cap: Spectrogram and pitch track (red) of the utterance "¿Me puedes prestar la tuya?", illustrating the L* H% nuclear configuration.
+knitr::include_graphics(
+  here("figs", "test01_001_a.png")
+  )
+```
+
+```{r}
+#| label: tbl-nuclear-configs
+#| tbl-cap: Nuclear configurations of high imposition requests.
+
+
+summary <- nuclear_configs %>%
+  count(nuclear_configuration) %>%
+  mutate(percentage = n / sum(n) * 100)
+
+summary %>% knitr::kable(format = "markdown", col.names = c("Nuclear Configuration", "Count", "Percentage"))
+```
+
+## Statistical Analysis {#sec-stats-analysis}
+
+Two Bayesian models were used to assess the relationship between the dependent variables mean pitch of utterance and mean pitch of boundary tone. Both models had the independent variables power, social distance, and level of imposition of request, all of which were binary, categorical values. Neither model provided evidence that there was a relationship between the mean pitch of either the boundary tone or the utterance with the three independent variables.
+
 # Discussion
+
+
 
 # Scraps
 
